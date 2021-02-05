@@ -9,17 +9,22 @@
  */
 
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View } from 'react-native';
+import { Platform, StyleSheet, Text, View, Button } from 'react-native';
 import CBCarolWidget from 'react-native-carol-widget';
 
 export default class App extends Component<{}> {
+  _openCamera() {
+    CBCarolWidget.onClick();
+  }
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>☆CBCarolWidget example☆</Text>
         <Text style={styles.instructions}>STATUS: loaded</Text>
         <Text style={styles.welcome}>☆☆☆</Text>
-        <CBCarolWidget />
+          <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+            <Button onPress={this._openCamera} title="Open Camera" />
+          </View>
       </View>
     );
   }

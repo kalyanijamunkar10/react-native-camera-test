@@ -1,5 +1,5 @@
-import { requireNativeComponent } from 'react-native';
+import { NativeModules } from 'react-native';
 
-const CBCarolWidget = requireNativeComponent('CBCarolWidget', null);
+const { CBCarolWidget } = NativeModules;
 
 export default CBCarolWidget;
